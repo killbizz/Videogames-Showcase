@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <%@ page import ="java.util.*" %>
+<%@ page import ="com.example.model.Videogame" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
     <head>
         <title>Videogames Catalog</title>
@@ -24,9 +26,15 @@
                         <td>Otto</td>
                         <td>@mdo</td>
                     </tr>
-                    <%
-                        //iterazione dell'attributo Map<Videogames> passato dalla Servlet
-                    %>
+                    <tr>
+                    <c:forEach items="${videogames}" var="entry">
+                        <tr>
+                            <td>${entry.value.getId()}</td>
+                            <td>${entry.value.getName()}</td>
+                            <td>${entry.value.getDescription()}</td>
+                            <td>${entry.value.getPrice()}</td>
+                        </tr>
+                    </c:forEach>
                 </tbody>
         </table>
         <br />

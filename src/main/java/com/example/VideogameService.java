@@ -17,15 +17,16 @@ public class VideogameService {
     
     public Map<String, Videogame> getVideogamesFromDB() {
 
-        Map<String, Videogame> videogames = new HashMap<String, Videogame>();
+        HashMap<String, Videogame> videogames = new HashMap<String, Videogame>();
 
         try {
         //MySQL DB connection
-        Class.forName("com.mysql.jdbc.Driver").newInstance();
+        Class.forName("com.mysql.jdbc.Driver").getDeclaredConstructor().newInstance();
         connDB = DriverManager.getConnection("jdbc:mysql://localhost:3306/test_servlet_java", "root", "");
         //Retrieving data
         statement = connDB.createStatement();
         query = statement.executeQuery("Select * from videogames;");
+        
         while(query.next()){
             String id = query.getString("ID");
             String name = query.getString("Name");
@@ -37,7 +38,11 @@ public class VideogameService {
 
     } catch (SQLException ex) { 
         ex.printStackTrace();
+        System.out.println("error1");
+        System.out.println(ex.getMessage());
     } catch (Exception e) {
+        System.out.println("error2");
+        System.out.println(e.getMessage());
     }
     finally {
         try{
@@ -53,7 +58,6 @@ public class VideogameService {
         } catch(Exception e) {
         }
     }
-
         return videogames;
     }
 
@@ -61,7 +65,7 @@ public class VideogameService {
 
         try {
         //MySQL DB connection
-        Class.forName("com.mysql.jdbc.Driver").newInstance();
+        Class.forName("com.mysql.jdbc.Driver").getDeclaredConstructor().newInstance();
         connDB = DriverManager.getConnection("jdbc:mysql://localhost:3306/test_servlet_java", "root", "");
         //Retrieving data
         statement = connDB.createStatement();
@@ -69,8 +73,12 @@ public class VideogameService {
 
         } catch (SQLException ex) { 
             ex.printStackTrace();
+            System.out.println("error1");
+            System.out.println(ex.getMessage());
             return false;
         } catch (Exception e) {
+            System.out.println("error2");
+            System.out.println(e.getMessage());
             return false;
         }
         finally {

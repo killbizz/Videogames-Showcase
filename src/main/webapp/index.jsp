@@ -6,7 +6,7 @@
     </head>
     <body>
         <h1 class="pb-4">Welcome to the Videogames Showcase</h1>
-        <h3 class="pb-4">Click <a href="./videogameList.jsp" >HERE</a> to visit the catalog</h3>
+        <h3 class="pb-4">Click <a href="Catalog" >HERE</a> to visit the catalog</h3>
         <br />
         <h3 class="pb-4">Insert a new videogame</h3>
         <form class="form-inline d-flex justify-content-center" method="post" action="InsertVideogameServlet" accept-charset=utf-8>
