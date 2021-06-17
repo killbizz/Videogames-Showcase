@@ -1,0 +1,4 @@
+com\example\InsertVideogameServlet.class
+com\example\VideogameService.class
+com\example\model\Videogame.class
+com\example\CatalogServlet.class
