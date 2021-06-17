@@ -28,8 +28,8 @@
             boolean flag = (boolean) request.getAttribute("VideogameInserted");
             if(flag == true) {
         %>
-        <div class="alert alert-success" role="alert">
-            Va bene
+        <div class="alert alert-success text-center" role="alert">
+            Item created correctly!
         </div>
         <% }
         %>
@@ -37,8 +37,8 @@
         <%
             if(flag == false) {
         %>
-        <div class="alert alert-danger" role="alert">
-            Qualcosa e' andato male
+        <div class="alert alert-danger text-center" role="alert">
+            Failed creating the new item, please retry!
         </div>
         <% }}
         %>

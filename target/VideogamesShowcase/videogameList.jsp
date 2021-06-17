@@ -21,18 +21,12 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
                     <c:forEach items="${videogames}" var="entry">
                         <tr>
                             <td>${entry.value.getId()}</td>
                             <td>${entry.value.getName()}</td>
                             <td>${entry.value.getDescription()}</td>
-                            <td>${entry.value.getPrice()}</td>
+                            <td>${entry.value.getPrice()}&euro;</td>
                         </tr>
                     </c:forEach>
                 </tbody>

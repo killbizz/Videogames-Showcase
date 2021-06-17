@@ -38,10 +38,10 @@ public class VideogameService {
 
     } catch (SQLException ex) { 
         ex.printStackTrace();
-        System.out.println("error1");
+        System.out.println("SQLException");
         System.out.println(ex.getMessage());
     } catch (Exception e) {
-        System.out.println("error2");
+        System.out.println("GenericException");
         System.out.println(e.getMessage());
     }
     finally {
@@ -62,39 +62,36 @@ public class VideogameService {
     }
 
     public boolean insertNewVideogameToDB(Videogame v) {
-
+        System.out.println(v.getName());
         try {
         //MySQL DB connection
         Class.forName("com.mysql.jdbc.Driver").getDeclaredConstructor().newInstance();
         connDB = DriverManager.getConnection("jdbc:mysql://localhost:3306/test_servlet_java", "root", "");
         //Retrieving data
         statement = connDB.createStatement();
-        query = statement.executeQuery("INSERT INTO videogames (Name, Description, Price, ID) VALUES ("+v.getName()+", "+v.getDescription()+", "+v.getPrice()+", "+v.getId()+");");
+        statement.executeUpdate("INSERT INTO videogames (Name, Description, Price, ID) VALUES ('"+v.getName()+"', '"+v.getDescription()+"', '"+v.getPrice()+"', '"+v.getId()+"');");
 
         } catch (SQLException ex) { 
             ex.printStackTrace();
-            System.out.println("error1");
+            System.out.println("SQLException");
             System.out.println(ex.getMessage());
             return false;
         } catch (Exception e) {
-            System.out.println("error2");
+            System.out.println("genericException");
             System.out.println(e.getMessage());
             return false;
         }
         finally {
             try{
-                query.close();
-            } catch(Exception e){
-                return false;
-            }
-            try{
                 statement.close();
             } catch(Exception e){
+                System.out.println("statementCloseException");
                 return false;
             }
             try{
                 connDB.close();
             } catch(Exception e) {
+                System.out.println("DBconnectionCloseException");
                 return false;
             }
         }
