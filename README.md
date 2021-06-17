@@ -1,6 +1,6 @@
 # Videogames Showcase
  Basic Web Application for practicing the Java language and testing out Servlet and JSP in Tomcat, connecting with a MySQL Database hosted in WampServer.
- Web Application link: (localhost:8080/VideogamesShowcase)
+ Web Application link: http://localhost:8080/VideogamesShowcase
 
 ## Software required
 - Apache Tomcat 9.x ( NOT v.10 or above)
