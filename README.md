@@ -14,4 +14,4 @@
 1. Install the required software
 2. Git clone the repository
 3. Launch Wamp and Tomcat server
-4. Deploy the `VideogamesShowcase.war` file in the Tomcat Web Application Manager
+4. Deploy the `target/VideogamesShowcase.war` file in the Tomcat Web Application Manager
