@@ -4,10 +4,10 @@
  Web Application (local) link: http://localhost:8080/VideogamesShowcase
 
 ## Software required
-- Apache Tomcat 9.x ( NOT v.10 or above)
-- Java JDK
+- Apache Tomcat 9.x ( NOT v.10 or later )
+- Java JDK ( v.8 or later )
 - Apache Maven 3.8.1
-- WampServer Version 3.2.3 64bit
+- WampServer Version 3.2.3
 
 ## Installation
 
